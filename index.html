@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive Sidebar Menu  | CodingLab </title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+        <i class='bx bx-brain icon'></i>
+        <div class="logo_name">NTP_NND</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <!--                      MENU                      -->
+    <ul class="nav-list">
+      <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a href="#" onclick="livingroom()">
+          <i class='bx bx-tv'></i>
+          <span class="links_name">Living Room</span>
+        </a>
+         <span class="tooltip">Living Room</span>
+      </li>
+      <li>
+       <a href="#" onclick="kitchen()">
+         <i class='bx bx-dish'></i>
+         <span class="links_name">Kitchen</span>
+       </a>
+       <span class="tooltip">Kitchen</span>
+     </li>
+     <li>
+       <a href="#" onclick="bedroom()">
+         <i class='bx bx-bed'></i>
+         <span class="links_name">Bedroom</span>
+       </a>
+       <span class="tooltip">Bedroom</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-cog' ></i>
+         <span class="links_name">Setting</span>
+       </a>
+       <span class="tooltip">Setting</span>
+     </li>
+     <li class="profile">
+         <div class="profile-details">
+           <!--<img src="profile.jpg" alt="profileImg">-->
+           <div class="name_job">
+             <div class="name">Nguyễn Thuận Phát</div>
+             <div class="job">21119349</div>
+             <div class="name">Nguyễn Nhựt Đăng</div>
+             <div class="job">21119062</div>
+           </div>
+         </div>
+         <button id="logoutBtn" onclick="logout()"> 
+            <i class='bx bx-log-out' id="log_out" ></i>
+         </button>
+     </li>
+    </ul>
+  </div>
+
+
+
+
+
+  <section class="home-section">
+      <!--Loi Chao-->
+      <header>  
+        <div class="text">Welcome To My Home, </div>
+        <div id="message" style="text-align: center; display: none;">
+          <h3>It's so COLD, Remember to keep warm <br> when going out</h3>
+        </div>
+        <div class="name-room" id="livingroom">Living room</div>
+        <div class="name-room" id="kitchen" style="display: none;">Kitchen</div>
+        <div class="name-room" id="bedroom" style="display: none;">Bedroom</div>
+      </header>
+      
+      <!--Cac DU LIEU moi truong-->
+      <div class="environment">
+        <h2><i class='bx bx-cloud' style="font-size: 40px;"></i>Weather at Ho Chi Minh city, VN<i class='bx bx-cloud' style="font-size: 40px;"></i></h2>
+        <div class="data">
+          <h3>Temperature: <span style="color: rgb(204, 54, 54);" id="temperature">None</span> °C</h3>
+          <h3>Humidity: <span style="color: rgb(16, 71, 91);" id="humidity">None</span> %</h3>
+          <h3>Wind: <span style="color: rgb(16, 71, 91);" id="wind">None</span> m/s</h3>
+        </div>    
+      </div>
+      <!--Cac thiet bi trong phong-->
+      <!-------------------------------------------ROOM 1------------------------------------------->
+      <div class="devices" id="room1">
+
+        <div class="row">
+
+          <div class="box" id="light_room1">
+            <img src="/img/idea.png" height="50px" width="50px" alt="">
+            <p>Light Bulb</p>
+            <div class="toggle-switch">
+                <input type="checkbox" id="toggle-light-room1" class="toggle-input" />
+                <label for="toggle-light-room1" onclick="status_light_room1()" class="toggle-label"></label>
+            </div>                    
+          </div>  
+
+          <div class="box">
+            <img src="/img/air-conditioner.png" height="50px" width="50px" alt="">
+            <p>Air Conditioner</p>
+            <div class="container">
+              <button class="down" id="decrement"> - </button>
+              <input type="number" min="16" max="30" step="1" value="20" id="my-input" readonly>
+              <button class="up" id="increment"> + </button>
+            </div>
+          </div>
+
+          <div class="box">
+            <img src="/img/fan.png" height="50px" width="50px" alt="">
+            <p>Fan</p>
+            <div class="radio-button" onclick=click_radio()>
+              <input type="radio" name="tick" id="radio-0" value="OFF">
+              <label for="radio-0" id="radio0" >OFF</label>
+              <input type="radio" name="tick" id="radio-1" value="1">
+              <label for="radio-1" >1</label>
+              <input type="radio" name="tick" id="radio-2" value="2">
+              <label for="radio-2" >2</label>
+              <input type="radio" name="tick" id="radio-3" value="3">
+              <label for="radio-3" >3</label>
+            </div>  
+          </div>
+
+          <div class="box" id="robot_room1">
+            <img src="/img/robot.png" height="50px" width="50px" alt="">
+            <p>Cleaning Robot</p>   
+            <div class="toggle-switch">
+                <input type="checkbox" id="toggle-robot-room1" class="toggle-input" />
+                <label for="toggle-robot-room1" onclick="status_robot_room1()" class="toggle-label"></label>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="box">
+            <img id="light" src="/img/light_bulb_on.png" height="90px" width="auto" alt="">
+            <p>Light</p>   
+            <input type="range" min="0" max="10" value="5" class="slider" id="sliderngang">
+            <p id="slidervalue">5</p>
+          </div>
+        </div>
+
+      
+      </div>
+
+      <!-------------------ROOM2------------------------------------>
+      <div class="devices" id="room2" style="display: none;">
+
+        <div class="row">
+          <div class="box" id="light_room2">
+            <img src="/img/idea.png" height="50px" width="50px" alt="">
+            <p>Light Bulb</p>
+            <div class="toggle-switch">
+                <input type="checkbox" id="toggle-light-room2" class="toggle-input" />
+                <label for="toggle-light-room2" onclick="status_light_room2()" class="toggle-label"></label>
+          </div>
+   
+          </div>
+
+          <div class="box">
+            <img src="/img/fan.png" height="50px" width="50px" alt="">
+            <p>Fan</p>
+            <div class="radio-button" onclick=click_radio_room2()>
+              <input type="radio" name="tick-room2" id="radio-0-room2" value="OFF">
+              <label for="radio-0-room2" id="radio0" >OFF</label>
+              <input type="radio" name="tick-room2" id="radio-1-room2" value="1">
+              <label for="radio-1-room2" >1</label>
+              <input type="radio" name="tick-room2" id="radio-2-room2" value="2">
+              <label for="radio-2-room2" >2</label>
+              <input type="radio" name="tick-room2" id="radio-3-room2" value="3">
+              <label for="radio-3-room2" >3</label>
+            </div>
+          </div>
+
+          <div class="box" id="robot_room2">
+            <img src="/img/robot.png" height="50px" width="50px" alt="">
+            <p>Cleaning Robot</p>   
+            <div class="toggle-switch">
+                <input type="checkbox" id="toggle-robot-room2" class="toggle-input" />
+                <label for="toggle-robot-room2" onclick="status_robot_room2()" class="toggle-label"></label>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-------------------ROOM3------------------------------------>
+      <div class="devices" id="room3" style="display: none;">
+
+        <div class="row">
+
+          <div class="box">
+            <img id="light1_room3" src="/img/light_bulb_on.png" height="90px" width="auto" alt="">
+            <p>Light</p>   
+            <input type="range" min="0" max="10" value="5" class="slider" id="sliderngang_room3">
+            <p id="slidervalue_room3">5</p>
+          </div>
+
+          <div class="box" id="light_room3">
+            <img src="/img/idea.png" height="50px" width="50px" alt="">
+            <p>Light Bulb</p>
+            <div class="toggle-switch">
+                <input type="checkbox" id="toggle-light-room3" class="toggle-input" />
+                <label for="toggle-light-room3" onclick="status_light_room3()" class="toggle-label"></label>
+            </div>
+          </div>
+          
+          <div class="box">
+            <img src="/img/fan.png" height="50px" width="50px" alt="">
+            <p>Fan</p>
+            <div class="radio-button" onclick=click_radio_room3()>
+              <input type="radio" name="tick-room3" id="radio-0-room3" value="OFF">
+              <label for="radio-0-room3" id="radio0" >OFF</label>
+              <input type="radio" name="tick-room3" id="radio-1-room3" value="1">
+              <label for="radio-1-room3" >1</label>
+              <input type="radio" name="tick-room3" id="radio-2-room3" value="2">
+              <label for="radio-2-room3" >2</label>
+              <input type="radio" name="tick-room3" id="radio-3-room3" value="3">
+              <label for="radio-3-room3" >3</label>
+          </div>  
+          </div>
+
+          <div class="box">
+            <img src="/img/air-conditioner.png" height="50px" width="50px" alt="">
+            <p>Air Conditioner</p>
+            <div class="container">
+              <button class="down" id="decrement-room3"> - </button>
+              <input type="number" min="16" max="30" step="1" value="20" id="my-input-room3" readonly>
+              <button class="up" id="increment-room3"> + </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      
+  </section>
+  <footer>
+    <div class="Time">
+      <h4>Time: <span id="current-time">Current Time</span></h4>
+      <h4>Date: <span id="current-date">Current Date</span></h4>
+    </div>
+  </footer>
+
+
+
+
+  <script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+  });
+
+  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); //calling the function(optional)
+  });
+
+  // following are the code to change sidebar button(optional)
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+   }
+  }
+  </script>
+
+  <!-- <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script> -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script> 
+  <script src="control.js"></script>
+</body>
+</html>

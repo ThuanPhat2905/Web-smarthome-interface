@@ -1,0 +1,505 @@
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+  transition: 0.15s;
+}
+.sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: #11101D;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+.sidebar.open{
+  width: 250px;
+}
+.sidebar .logo-details{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sidebar .logo-details .icon{
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar .logo-details .logo_name{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name{
+  opacity: 1;
+}
+.sidebar .logo-details #btn{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details #btn{
+  text-align: right;
+}
+.sidebar i{
+  color: #fff;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.sidebar .nav-list{
+  margin-top: 20px;
+  height: 100%;
+}
+.sidebar li{
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+.sidebar li .tooltip{
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar li:hover .tooltip{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar.open li .tooltip{
+  display: none;
+}
+.sidebar input{
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #1d1b31;
+}
+.sidebar.open input{
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+.sidebar .bx-search{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  background: #1d1b31;
+  color: #FFF;
+}
+.sidebar.open .bx-search:hover{
+  background: #1d1b31;
+  color: #FFF;
+}
+.sidebar .bx-search:hover{
+  background: #FFF;
+  color: #11101d;
+}
+.sidebar li a{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #11101D;
+}
+.sidebar li a:hover{
+  background: #FFF;
+}
+.sidebar li a .links_name{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.sidebar.open li a .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i{
+  transition: all 0.5s ease;
+  color: #11101D;
+}
+.sidebar li i{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+.sidebar li.profile{
+  position: fixed;
+  height: 100px; 
+  width: 78px;
+  left: 0;
+  bottom: -8px;
+  padding: 10px 14px;
+  background: #1d1b31;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+.sidebar.open li.profile{
+  width: 250px;
+}
+.sidebar li .profile-details{
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.sidebar li img{
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+.sidebar li.profile .name,
+.sidebar li.profile .job{
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+  white-space: nowrap;
+}
+.sidebar li.profile .job{
+  font-size: 12px;
+}
+.sidebar .profile #log_out{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: #1d1b31;
+  width: 100%;
+  height: 100px;
+  line-height: 60px;
+  border-radius: 0px;
+  transition: all 0.5s ease;
+  color: orangered;
+}
+.sidebar.open .profile #log_out{
+  width: 50px;
+  background: none;
+}
+.home-section{
+  position: relative;
+  background: #E4E9F7;
+  min-height: 95vh;
+  top: 0;
+  left: 78px;
+  width: calc(100% - 78px);
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+.sidebar.open ~ .home-section{
+  left: 250px;
+  width: calc(100% - 250px);
+}
+.home-section .text{
+  display: inline-block;
+  color: #11101d;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 20px;
+}
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.name-room{
+  display: inline-block;
+  color:  #11101d;
+  font-size: 40px;
+  font-weight: 500;
+  margin: 20px;
+  border: 2px solid rgb(74, 132, 132);
+  box-shadow: 0px 0px 10px blue;
+  border-radius: 7px 7px;
+}
+
+
+/*------------------------------------------------------*/
+
+
+.environment{
+  display: flex;
+  flex-direction: column;
+  margin: 0 30px;
+}
+.data{
+  display: flex;
+}
+
+.data h3{
+  margin: 0 30px;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  margin: 40px;
+}
+
+.box{
+  border-radius: 20px;
+  height: 200px;
+  width: 200px;
+  /*border: 2px solid black;*/
+  background-color: azure;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 3px 4px 3px 0px rgb(150, 145, 145);
+}
+
+/* -----------------Time----------------------- */
+footer{
+  display: flex;
+  justify-content: right;
+  background: #E4E9F7;
+}
+.Time{
+  margin: 0 30px;
+}
+
+/*  Toggle BUTTON  ------------------------*/
+/* Switch toggle */
+/* SWITCH 1*/
+/* Genel stil */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  margin: 10px;
+}
+
+/* Giriş stil */
+.toggle-switch .toggle-input {
+  display: none;
+}
+
+/* Anahtarın stilinin etrafındaki etiketin stil */
+.toggle-switch .toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 24px;
+  background-color: rgb(142, 167, 244);
+  border-radius: 34px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Anahtarın yuvarlak kısmının stil */
+.toggle-switch .toggle-label::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+/*CHuyen background BOX khi nhan SWITCH*/
+
+
+
+/* Anahtarın etkin hale gelmesindeki stil değişiklikleri */
+.toggle-switch .toggle-input:checked + .toggle-label {
+  background-color: #4caf50;
+}
+
+.toggle-switch .toggle-input:checked + .toggle-label::before {
+  transform: translateX(16px);
+}
+
+/* Light tema */
+.toggle-switch.light .toggle-label {
+  background-color: #bebebe;
+}
+
+.toggle-switch.light .toggle-input:checked + .toggle-label {
+  background-color: #9b9b9b;
+}
+
+.toggle-switch.light .toggle-input:checked + .toggle-label::before {
+  transform: translateX(6px);
+}
+
+/* Dark tema */
+.toggle-switch.dark .toggle-label {
+  background-color: #4b4b4b;
+}
+
+.toggle-switch.dark .toggle-input:checked + .toggle-label {
+  background-color: #717171;
+}
+
+.toggle-switch.dark .toggle-input:checked + .toggle-label::before {
+  transform: translateX(16px);
+}
+
+
+/*--------RADIO BUTTON FOR   FAN------------------*/
+input[type="radio"] {
+  display: none;
+}
+
+/* Tạo một nút radio tùy chỉnh */
+input[type="radio"] + label {
+  display: inline-block;
+  width: 30px; /* Độ rộng của nút radio */
+  height: 30px; /* Chiều cao của nút radio */
+  background-color: #ccc; /* Màu nền của nút radio */
+  border-radius: 5px; /* Đường viền hình tròn */
+  text-align: center;
+  margin: 1px;
+  line-height: 30px; /* Canh giữa nội dung */
+  cursor: pointer;
+} 
+
+/* Khi nút radio được chọn */
+input[type="radio"]:checked + label {
+  background-color: #007bff; /* Màu nền của nút radio khi được chọn */
+  color: #fff; /* Màu chữ của nút radio khi được chọn */
+}
+
+#radio-0:checked + label, #radio-0-room2:checked + label, #radio-0-room3:checked + label {
+  background-color: #ff2d65; /* Màu nền của nút radio khi được chọn */
+  color: #fff; /* Màu chữ của nút radio khi được chọn */
+}
+#radio0{
+  width: 60px;
+}
+
+
+/*---------------------------BUTTON STEPPER--------------------*/
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 600;
+}
+body{
+  background-color: #3264fe;
+}
+.container{
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 3px 4px 3px 0px rgb(150, 145, 145);
+}
+input[type="number"]{
+  -moz-appearance: textfield;
+  text-align: center;
+  font-size: 40px;
+  border: none;
+  background-color: #ffffff;
+  color: #202030;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+button{
+  color: #3264fe;
+  background-color: #ffffff;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+}
+/*#decrement{
+  padding: 15px 5px 15px 25px;
+  border-radius: 45px 0 0 45px;
+}
+#increment{
+  padding: 15px 25px 15px 5px;
+  border-radius: 0 45px 45px 0;
+}*/
+.down {
+  padding: 15px 5px 15px 25px;
+  border-radius: 45px 0 0 45px;
+}
+.up{
+  padding: 15px 25px 15px 5px;
+  border-radius: 0 45px 45px 0;
+}
+
+/*-------------------------------------------------------*/
+@media (max-width: 420px) {
+  .sidebar li .tooltip{
+    display: none;
+  }
+}
+
+
+#message{
+  display: inline-block;
+  color:  #11101d;
+  /* font-size: 40px; */
+  /* font-weight: 500; */
+  margin: 20px;
+  margin-right: 120px;
+  padding: 10px;
+  /* border: 2px solid rgb(74, 132, 132); */
+  box-shadow: 0px 0px 20px rgb(255, 0, 119);
+  border-radius: 30px 30px;
+  color: #005fc5;
+  background-color: rgb(255, 244, 248);
+}
+
+/* ---------------------------Log Out---------------------- */
